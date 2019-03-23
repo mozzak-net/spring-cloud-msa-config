@@ -1,0 +1,21 @@
+# Spring 설정
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+
+# Registry 설정
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka
+
+# Gateway 설정 (Netfliex Zuul)
+zuul:
+  ignored-services: '*'
+  routes:
+    api:
+      path: /api/**
+      stripPrefix: true
+      sensitive-headers:

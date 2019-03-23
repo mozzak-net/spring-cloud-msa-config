@@ -1,0 +1,23 @@
+# Spring 설정
+spring:
+  application:
+    name: api
+  profiles:
+    active: dev
+
+# Config 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health
+
+# Registry 설정
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka
+
+# Test
+test:
+  message: api-dev.yaml
